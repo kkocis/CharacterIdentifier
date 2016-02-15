@@ -1,15 +1,15 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.EventObject;
+import java.awt.event.ActionListener;
 
-public class WindowDisplay {
-	String getCharacter="d";
+
+public class WindowDisplay extends Globals {
+//	public static String getCharacter= new String();
+
 public void frame() {
 	
 	final JTextField characterInput = new JTextField(); //make a text field so that the user can input their character
@@ -18,15 +18,17 @@ public void frame() {
 	final JLabel characterIn = new JLabel (""); // This is where the character will be displayed
 	characterIn.setHorizontalAlignment(JLabel.CENTER); //center the character that is to be displayed
 	characterIn.setFont(new Font("Times New Roman", Font.PLAIN, 100));  //display the text reeeally big
-
 	
-	JLabel unicodeLabel = new JLabel ("Unicode");//Create and Label a box for the Unicode
-	JLabel unicodeIn = new JLabel (""); 
+	JLabel unicodeLabel = new JLabel ("Unicode:");//Create and Label a box for the Unicode
+	final JLabel unicodeIn = new JLabel (""); 
 	
-	JLabel hexLabel = new JLabel ("Hex"); //Create and Label a box for the hex values
+	JLabel hexLabel = new JLabel ("Hex UTF 16:"); //Create and Label a box for the hex values
 	final JLabel hexIn = new JLabel (""); 
 	
-	JLabel alphaEntityLabel = new JLabel ("Character Description"); //Create and Label a box for the alpha entity
+	JLabel javacodeLabel = new JLabel ("Java Code:");//Create and Label a box for the Unicode
+	final JLabel javacodeIn = new JLabel (""); 
+	
+	JLabel alphaEntityLabel = new JLabel ("Character Description:"); //Create and Label a box for the alpha entity
 	JLabel alphaIn = new JLabel (""); 
 	
 	
@@ -48,17 +50,35 @@ public void frame() {
 	p.add(hexIn);
 	p.add(alphaEntityLabel);
 	p.add(alphaIn);
+	p.add(javacodeLabel);
+	p.add(javacodeIn);
 	f.add(p); // Now we add the panel to the frame.
 
-	characterInput.addActionListener(new ActionListener() {  //add an action listener to the text field
+	characterInput.addActionListener(new ActionListener(){  //add an action listener to the text field
 	      public void actionPerformed(ActionEvent e) {   //when the enter key is hit:
-	    	  getCharacter= characterInput.getText();	//set the character string equal to the inputed text
-	    	  System.out.println(getCharacter);
-	    	  characterIn.setText(getCharacter);		//display the input character in the text field 
-	        
+	    	 
+	    	  getInput= characterInput.getText();	//set the character string equal to the inputed text
+	    	  //characterIn.setText(getInput);	//display the input character in the text field 
+	    	  
+	    	  //in case user inputs multiple characters, pull just the first one
+	    	  String firstCharacter= String.valueOf(getInput.charAt(0));
+	    	  
+	    	  //Display the first Character that the user input very large
+	    	  characterIn.setText(firstCharacter);
+	    	  
+	    	  //convert from string to char
+	    	  char first = firstCharacter.charAt(0);
+	    	  
+	    	  //take in the character, return its hex value
+	    	  inputHex = String.format("%04x", (int) first);
+	    	  hexIn.setText("0x"+inputHex);  //display the hex information about the character in the window
+	    	  unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
+
+	    	//System.out.println(inputHex);
+ 	 
+
 	      }
 	    });
-
 	  }
 }	
 	

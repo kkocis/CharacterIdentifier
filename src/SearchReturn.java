@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SearchReturn extends ReadCVS{
+public class SearchReturn extends Globals {
 
 	public static void getAlpha(){
 		//String convertAlpha=alpha.trim();
@@ -15,8 +15,11 @@ public class SearchReturn extends ReadCVS{
 		System.out.println(alpha);	
 	}
 	
-	public static void getHex(){	
-		System.out.println(hex);
+	public static void getHex(char enterCharacter){	
+		//take in the character, return its hex value
+			String hex1 = String.format("%04x", (int) enterCharacter);
+			System.out.println(hex1);
+
 	}
 	
 }

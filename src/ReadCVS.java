@@ -9,24 +9,16 @@ import java.util.Arrays;
 import java.util.Scanner;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
  
-public class ReadCVS
+public class ReadCVS extends Globals
 {
 	//http://howtodoinjava.com/core-java/related-concepts/parse-csv-files-in-java/
-   	
-	//protected static ArrayList<String> listReturn= new ArrayList<String>();
-	protected static String hex= new String();
-	protected static String alpha= new String();
-		//ArrayList listReturn = new ArrayList();
-	
-	
+   		
 	//Input file which needs to be parsed (fileToParse), and a hex value to search for (input)
 	public static void readFile(String fileToParse, String input){
     {
 
         BufferedReader fileReader = null;
-        //Boolean matchFound = null;
-     
-        //Delimiter used in CSV file
+      
         final String DELIMITER = ",";
         try
         {
