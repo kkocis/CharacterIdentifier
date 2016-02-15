@@ -41,7 +41,7 @@ public class ReadCVS extends Globals
                 		alpha=tokens[4];
                 		//matchFound= true;
                 	//}
-                
+                System.out.println(line);
                 }
                
                 }

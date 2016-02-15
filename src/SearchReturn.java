@@ -8,17 +8,21 @@ import java.util.Scanner;
 
 public class SearchReturn extends Globals {
 
-	public static void getAlpha(){
+	public void getAlpha(){
 		//String convertAlpha=alpha.trim();
 		//String convertAlpha= alpha.indexOf("//w,"");
 		//String convertAlpha=alpha.replaceAll("//W", "");
 		System.out.println(alpha);	
 	}
 	
-	public static void getHex(char enterCharacter){	
+	public String getHex(char enterCharacter){	
 		//take in the character, return its hex value
-			String hex1 = String.format("%04x", (int) enterCharacter);
-			System.out.println(hex1);
+			String inputHex = Integer.toHexString(enterCharacter);
+			System.out.println(inputHex);
+			return inputHex;
+			//hexIn.setText("0x00"+inputHex);  //display the hex information about the character in the window
+		  // 	unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
+
 
 	}
 	

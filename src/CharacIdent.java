@@ -9,9 +9,10 @@ public class CharacIdent extends Globals{
 		SearchReturn searchList = new SearchReturn();
 		WindowDisplay window = new WindowDisplay();
 		
-		cvsReader.readFile("entityfacts.csv","0x20a4");
-
-		System.out.println(inputHex);
+		cvsReader.readFile("entityfacts.csv", "0x20a2");
+		System.out.println(hex);
+		
+		System.out.println(alpha);
 
 		window.frame();
 		
