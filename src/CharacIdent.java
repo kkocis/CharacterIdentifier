@@ -10,6 +10,8 @@ public class CharacIdent extends Globals{
 		WindowDisplay window = new WindowDisplay();
 		
 		cvsReader.readFile("entityfacts.csv","0x20a4");
+		System.out.println(hex);
+		System.out.println(alpha);
 
 		System.out.println(inputHex);
 

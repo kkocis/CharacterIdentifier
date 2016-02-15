@@ -71,7 +71,13 @@ public void frame() {
 	    	  
 	    	  //take in the character, return its hex value
 	    	  inputHex = String.format("%04x", (int) first);
-	    	  hexIn.setText("0x"+inputHex);  //display the hex information about the character in the window
+	    	  hexIn.setText(inputHex);  //display the hex information about the character in the window
+	    	  if (inputHex.length()==2){
+	    		  hexIn.setText("0x00"+inputHex);
+	    	  }
+	    	  if (inputHex.length()==4){
+	    		  hexIn.setText("0x"+inputHex);
+	    	  }
 	    	  unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
 
 	    	//System.out.println(inputHex);
