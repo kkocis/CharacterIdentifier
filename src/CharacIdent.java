@@ -19,8 +19,5 @@ public class CharacIdent extends Globals{
 		//searchList.getAlpha();
 		//searchList.getHex();
 		
-	
-		
 	}
-
 }
