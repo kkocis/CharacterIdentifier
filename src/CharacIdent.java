@@ -9,7 +9,7 @@ public class CharacIdent extends Globals{
 		SearchReturn searchList = new SearchReturn();
 		WindowDisplay window = new WindowDisplay();
 		String Hex1 = new String();
-		cvsReader.readFile("entityfacts.csv",alpha);
+		cvsReader.readFile("entityfacts.csv",Hex1);
 		
 
 		window.frame();
