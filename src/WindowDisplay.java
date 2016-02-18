@@ -79,6 +79,7 @@ public void frame() {
 	    		  hexIn.setText("0x"+inputHex);
 	    	  }
 	    	  unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
+	    	  alphaIn.setText(alpha);
 
 	    	//System.out.println(inputHex);
  	 
