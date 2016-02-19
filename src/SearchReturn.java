@@ -20,10 +20,7 @@ public class SearchReturn extends Globals {
 			String inputHex = Integer.toHexString(enterCharacter);
 			System.out.println(inputHex);
 			return inputHex;
-			//hexIn.setText("0x00"+inputHex);  //display the hex information about the character in the window
-		  // 	unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
-
-
+		
 	}
 	
 }

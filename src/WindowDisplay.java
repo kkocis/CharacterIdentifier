@@ -13,6 +13,7 @@ public class WindowDisplay extends Globals implements ActionListener {
 
 	JLabel characterInLabel = new JLabel ("Enter a character, then press enter:"); // Label the text field with instructions on how to insert a character
 	final JLabel characterIn = new JLabel (""); // This is where the character will be displayed
+	
 	JLabel unicodeLabel = new JLabel ("Unicode:");//Create and Label a box for the Unicode
 	final JLabel unicodeIn = new JLabel (""); 
 
