@@ -37,7 +37,7 @@ public class ReadCVS extends Globals
                String[] tokens = line.split(DELIMITER);
                if (line.contains(input)){
                 	//if(tokens[0].replaceAll("\\s+","").equals(input)){
-                		hex=tokens[1];
+                	    hex=tokens[1];
                 		alpha=tokens[4];
                 		//matchFound= true;
                 	//}

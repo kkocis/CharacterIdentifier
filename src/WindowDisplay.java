@@ -30,6 +30,60 @@ public class WindowDisplay extends Globals implements ActionListener {
 	JLabel emptyspace = new JLabel (""); //This creates an empty space, so the GUI looks nice.
 
 	JFrame f = new JFrame();
+
+	f.setVisible(true); // The pop up window is now visible.
+	f.setSize(700,500); // The pop up window has these dimensions.
+	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //The pop up window can be closed now by clicking close.
+	
+	JPanel p = new JPanel(new GridLayout(0,2)); //We must make a panel. The Gridlayout allows us to organize the features in two columns.
+	p.add(characterInLabel); // On the panel, we add the different features (JLabel, JComboBox, JButton, etc.)
+	p.add(characterInput);
+	p.add(characterIn);
+	p.add(emptyspace);
+	p.add(unicodeLabel);
+	p.add(unicodeIn);
+	p.add(hexLabel);
+	p.add(hexIn);
+	p.add(alphaEntityLabel);
+	p.add(alphaIn);
+	p.add(javacodeLabel);
+	p.add(javacodeIn);
+	f.add(p); // Now we add the panel to the frame.
+
+	characterInput.addActionListener(new ActionListener(){  //add an action listener to the text field
+	      public void actionPerformed(ActionEvent e) {   //when the enter key is hit:
+	    	 
+	    	  getInput= characterInput.getText();	//set the character string equal to the inputed text
+	    	  //characterIn.setText(getInput);	//display the input character in the text field 
+	    	  
+	    	  //in case user inputs multiple characters, pull just the first one
+	    	  String firstCharacter= String.valueOf(getInput.charAt(0));
+	    	  
+	    	  //Display the first Character that the user input very large
+	    	  characterIn.setText(firstCharacter);
+	    	  
+	    	  //convert from string to char
+	    	  char first = firstCharacter.charAt(0);
+	    	  
+	    	  //take in the character, return its hex value
+	    	  inputHex = String.format("%04x", (int) first);
+	    	  hexIn.setText(inputHex);  //display the hex information about the character in the window
+	    	  if (inputHex.length()==2){
+	    		  hexIn.setText("0x00"+inputHex);
+	    	  }
+	    	  if (inputHex.length()==4){
+	    		  hexIn.setText("0x"+inputHex);
+	    	  }
+	    	  unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
+	    	  alphaIn.setText(alpha);
+
+	    	//System.out.println(inputHex);
+ 	 
+
+	      }
+	    });
+	  }
+}	
 	
 	public void frame() {
 
