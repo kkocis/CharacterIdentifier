@@ -83,10 +83,10 @@ public void frame() {
 	    	  }
 	  
 	    	  ReadCVS cvsReader = new ReadCVS();
-	    	  cvsReader.readFile("entityfacts.csv", hexOut);
+	    	  cvsReader.readFile("entityfacts.csv", inputHex);
 	    	  
 	    	  hexIn.setText(hexOut);
-	    	  alphaIn.setText(alpha);
+	    	  alphaIn.setText(alphaReplace);
 
 
 	      }

@@ -23,24 +23,3 @@ public class SearchReturn extends Globals {
 	}
 	
 }
-
-//System.out.println(listReturn.get(0));
-//String DELIMITER = ",";
-//	String[] tokens= lineIn.split(DELIMITER);
-//System.out.println(listReturn.get(0));
-//String lineIn = listReturn.get(0);
-//String[] tokens = lineIn.split(",", 1);
-//String getTokens= (String) listReturn.get(0);
-//(listReturn.get(0)).toString();
-//System.out.println(listReturn);
-	//System.out.println(line.indexOf("input"));
-//listReturn.add(line);
-  //line.indexOf("input");  
- // System.out.println(tokens[0]);
-//Arrays.toString(listReturn.get(0));
-  //System.out.println(Arrays.toString(tokens));
-//System.out.println(listReturn);
-  // System.out.print(listReturn.size());
-   //listReturn.add(tokens[0]);
-//public static void getAlpha(ArrayList arrayin){
-	//System.out.println(arrayin);
