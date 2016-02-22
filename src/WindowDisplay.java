@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 
 public class WindowDisplay extends Globals {
-//	public static String getCharacter= new String();
 
 public void frame() {
 	
@@ -29,7 +28,7 @@ public void frame() {
 	final JLabel javacodeIn = new JLabel (""); 
 	
 	JLabel alphaEntityLabel = new JLabel ("Character Description:"); //Create and Label a box for the alpha entity
-	JLabel alphaIn = new JLabel (""); 
+	final JLabel alphaIn = new JLabel (""); 
 	
 	
 	JLabel emptyspace = new JLabel (""); //This creates an empty space, so the GUI looks nice.
@@ -70,33 +69,29 @@ public void frame() {
 	    	  char first = firstCharacter.charAt(0);
 	    	  
 	    	  //take in the character, return its hex value
-	    	  inputHex = String.format("%04x", (int) first);
-	    	  hexIn.setText(inputHex);  //display the hex information about the character in the window
+	    	  inputHex = Integer.toHexString(first);
+	    	  
+	    	//display the hex information about the character in the window
+	    	//properly format the hex and unicode information
 	    	  if (inputHex.length()==2){
-	    		  hexIn.setText("0x00"+inputHex);
+	    		  hexOut = "0x00"+inputHex;
+	    		  unicodeIn.setText("U+00"+inputHex);
 	    	  }
 	    	  if (inputHex.length()==4){
-	    		  hexIn.setText("0x"+inputHex);
+	    		  hexOut = "0x"+inputHex;
+	    		  unicodeIn.setText("U+ "+inputHex);
 	    	  }
-	    	  unicodeIn.setText("U+" + inputHex); //display the unicode information about the character in the window
+	  
+	    	  ReadCVS cvsReader = new ReadCVS();
+	    	  cvsReader.readFile("entityfacts.csv", hexOut);
+	    	  
+	    	  hexIn.setText(hexOut);
 	    	  alphaIn.setText(alpha);
 
-	    	//System.out.println(inputHex);
- 	 
 
 	      }
 	    });
 	  }
 }	
-	
-	
-/* when text is entered (or button is clicked)
-	unicodeIn.setText(unicode);
-	hexIn.setText(hex);
-	alphaIn.setText(alpha);
-	
-	
-}
-} 
-*/
+
 	
