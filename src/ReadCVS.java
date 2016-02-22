@@ -3,12 +3,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
- 
+
 public class ReadCVS extends Globals {
 	//http://howtodoinjava.com/core-java/related-concepts/parse-csv-files-in-java/
    		
