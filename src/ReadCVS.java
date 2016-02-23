@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ReadCVS extends Globals {
+public class ReadCVS extends CharacterPanel {
 	//http://howtodoinjava.com/core-java/related-concepts/parse-csv-files-in-java/
    		
 	//Input file which needs to be parsed (fileToParse), and a hex value to search for (input)
@@ -31,12 +31,15 @@ public class ReadCVS extends Globals {
               
                //search for where the line contains the input hex value
              if (line.contains(input)){ 
+            	 
             	 //the hex value is located as the second value in the String array tokens  
             	 hex = tokens[1];
+            	 
             	 //if the hex value in the csv file ends with the input hex value, then set alpha equal to the fourth value in the string array and trim extra characters            	 
             	   if (hex.endsWith("0x"+input)){
                 	alpha=tokens[4];
                 	alphaReplace = alpha.replace("\"", "");
+                	//alphaIn.setText(alphaReplace);
             	   }
               }
                
